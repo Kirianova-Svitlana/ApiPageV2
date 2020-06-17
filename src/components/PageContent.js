@@ -12,7 +12,7 @@ const initialInputValues = {
   format: 'XML', 
 }
 
-const PageContent = () => {
+const PageContent = ({user}) => {
   const [sections, setSections] = useState(sectionsConfig)
   const [inputValues, setInputValues] = useState(initialInputValues)
 
@@ -20,6 +20,7 @@ const PageContent = () => {
     <div className="container px-5">
       <UrltableContent inputValues={inputValues}/>
       <InputsContent
+        user={user}
         sections={sections}
         setSections={setSections}
         inputValues={inputValues}

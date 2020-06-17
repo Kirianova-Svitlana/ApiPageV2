@@ -18,7 +18,10 @@ const UrlTable = ({inputValues}) => {
     <div className="row method-output">
       <div className="col-md-12 py-3">
         <p>
-          {`app.callcriteria.com/API/?apikey=${inputValues.apiKey}&scorecard=${inputValues.scorecardId}&appName=${inputValues.appName}`}   
+          {`http://app.callcriteria.com/callcriteriaAPI.svc/${inputValues.format}/AddRecord?apikey=${inputValues.apiKey}&scorecard=${inputValues.scorecardId}&appname=${inputValues.appName}`}
+          {
+            // `app.callcriteria.com/API/?apikey=${inputValues.apiKey}&scorecard=${inputValues.scorecardId}&appname=${inputValues.appName}`
+          }   
         </p>
       </div>
     </div>

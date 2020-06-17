@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputsTable = ({inputValues, setInputValues}) => {
+const InputsTable = ({inputValues, setInputValues, user}) => {
   
   const handleChange = (e, key) => {
     setInputValues({
@@ -8,7 +8,16 @@ const InputsTable = ({inputValues, setInputValues}) => {
       [key]: e.target.value,
     })
   }
+  const apiKeys = []
+  let scorecards
+  let apps
+  if (user) {
+    apps = user.session.apps
+    scorecards = user.session.scorecards
+  }
 
+  console.log("apps------->", apps)
+  console.log("scorecards------->", scorecards)
   return (
     <div className="row blue-back api-box-form py-2" >
       <div className="col-md-3">
@@ -25,23 +34,57 @@ const InputsTable = ({inputValues, setInputValues}) => {
       <div className="col-md-3">
         <div className="form-group">
           <label>SCORECARD ID</label>
-          <input
-            type="text"
-            className="form-control"
-            value={inputValues.scorecardId || ''}
-            onChange={(e) => handleChange(e, 'scorecardId')}
-          />
+          {
+            !user || !scorecards || scorecards.length === 0 ?
+            <input
+              type="text"
+              className="form-control"
+              value={inputValues.scorecardId || ''}
+              onChange={(e) => handleChange(e, 'scorecardId')}
+            /> : 
+            <select
+              id="scorecardId"
+              className="form-control"
+              name="scorecardId"
+              value={inputValues.scorecardId}
+              onChange={(e) => handleChange(e, 'scorecardId')}
+            >
+              <option>Select</option>
+              {
+                scorecards.map(s => {
+                  return <option value={s.scorecard}>{s.scorcard_name}</option>
+                })
+              }
+            </select>
+          }
         </div>
       </div>
       <div className="col-md-3">
         <div className="form-group">
           <label>APP NAME</label>
-          <input
-            type="text"
-            className="form-control"
-            value={inputValues.appName || ''}
-            onChange={(e) => handleChange(e, 'appName')}
-          />
+          {
+            !user || !apps || apps.length === 0 ?
+            <input
+              type="text"
+              className="form-control"
+              value={inputValues.appName || ''}
+              onChange={(e) => handleChange(e, 'appName')}
+            /> : 
+            <select
+              id="appName"
+              className="form-control"
+              name="appName"
+              value={inputValues.appName}
+              onChange={(e) => handleChange(e, 'appName')}
+            >
+              <option>Select</option>
+              {
+                apps.map(app => {
+                  return <option>{app.appname}</option>
+                })
+              }
+            </select>
+          }
         </div>
       </div>
         <div className="col-md-3">

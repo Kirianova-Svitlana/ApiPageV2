@@ -5,7 +5,7 @@ import StaticSection from './StaticSection'
 import CollapsedSection from './CollapsedSection'
 import CodePart from './CodePart'
 
-const InputsContent = ({sections, setSections, inputValues, setInputValues}) => {
+const InputsContent = ({sections, setSections, inputValues, setInputValues, user}) => {
   return (
     <Fragment>
       <div className="row py-3" id="inputs" >
@@ -21,6 +21,7 @@ const InputsContent = ({sections, setSections, inputValues, setInputValues}) => 
         </div>
       </div>
       <InputsTable
+        user={user}
         inputValues={inputValues}
         setInputValues={setInputValues}/>
       <StaticSection />
