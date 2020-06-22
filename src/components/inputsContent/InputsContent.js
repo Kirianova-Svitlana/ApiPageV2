@@ -5,7 +5,16 @@ import StaticSection from './StaticSection'
 import CollapsedSection from './CollapsedSection'
 import CodePart from './CodePart'
 
-const InputsContent = ({sections, setSections, inputValues, setInputValues, user}) => {
+const InputsContent = ({
+  sections,
+  setSections,
+  inputValues,
+  setInputValues,
+  user,
+  checkedSections,
+  setCheckedSections,
+  initialCheckedSections,
+}) => {
   return (
     <Fragment>
       <div className="row py-3" id="inputs" >
@@ -34,12 +43,14 @@ const InputsContent = ({sections, setSections, inputValues, setInputValues, user
                 sections={sections}
                 key={section.sectionName + '-' + index}
                 setSections={setSections}
+                setCheckedSections={setCheckedSections}
+                initialCheckedSections={initialCheckedSections}
               />
             })
           }
         </div>
       </div>
-      <CodePart sections={sections} inputValues={inputValues}/>
+      <CodePart inputValues={inputValues} checkedSections={checkedSections}/>
     </Fragment>
   )
 } 

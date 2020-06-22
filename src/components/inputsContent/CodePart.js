@@ -1,26 +1,21 @@
 import React from 'react'
 
-const CodePart = ({sections, inputValues}) => {
-  const checkedSections = []
-  const jsonObject = {
-    appname: inputValues.appName,
-    SESSION_ID: 'String content',
-    scorecard: inputValues.scorecardId 
-  }
-  sections.map(section => {
-    const checkedInSection = section.sectionFilds.filter(sectionRow => sectionRow.isChecked)
-    if (checkedInSection.length !== 0) {
-      const option = {
-        name: section.sectionName,
-        options: checkedInSection
-      }
-      checkedSections.push(option)
+const CodePart = ({checkedSections, inputValues}) => {
+  const jsonObj = {}
+  checkedSections.map(s => {
+    if (s.id === 'audios') {
+      const values = []
+      s.value.map(v => {
+        const val = {}
+        val[v.id] = v.value
+        values.push(val)
+      })
+      jsonObj[s.id] = values
+    } else {
+      jsonObj[s.id] = s.value
     }
-    checkedInSection.forEach(s => {
-      jsonObject[s.id] = 'String content'
-    })
-    return false
   })
+  const string = JSON.stringify(jsonObj)
   return (
     <div className="row output-area mb-5">
       <div className="col-md-12">
@@ -28,33 +23,80 @@ const CodePart = ({sections, inputValues}) => {
           {
             inputValues.format === 'XML' ?
             (
-              <pre>
-                <div>{`<CallCriteriaAPI.AddRecordData xmlns=&#x22;http://schemas.datacontract.org/2004/07/>`}</div>
-                <div>{`<!--Call Criteria will give data after sign up -->`}</div>
-                <div>{`<appname>${inputValues.appName}</appname>`}</div>
-                <div>{`<SESSION_ID>String content</SESSION_ID>`}</div>
-                <div>{`<scorecard>${inputValues.scorecardId}</scorecard>`}</div>
+              <div>
+                <pre>{`<CallCriteriaAPI.AddRecordData xmlns="http://schemas.datacontract.org/2004/07/">`}</pre>
                 {
                   checkedSections.map((section, index) => {
-                    return <div key={section.name + '-' + index}>
-                      <div>{`<!-- ${section.name} detail -->`}</div>
+                    return <div key={section.id}>
                       {
-                        section.options.map((option, key) => {
-                          return <div key={'option-' + option.id}>
-                            {`<${option.id}>String content<${option.id}>`}
-                          </div>
-                        })
+                        section.id === 'audios' ?
+                        <pre>
+                          {`    <audios>`}<br/>
+                          {`        <CallCriteriaAPI.AudioFile>`}<br/>
+                          {
+                            section.value.map((v, i) => {
+                              return <pre key={v.id}>{`             <${v.id}>${v.value}</${v.id}>`}</pre>
+                            })
+                          }
+                          {`        <CallCriteriaAPI.AudioFile>`}<br/>
+                          {`    <audios>`}
+                        </pre> :
+                        section.id === 'OtherDataItems' ?
+                        <pre>
+                          {`    <OtherDataItems>`}<br/>
+                          {`        <CallCriteriaAPI.OtherData>`}<br />
+                          {
+                            section.value.map((v, i) => {
+                              return <pre key={v.id}>{`             <${v.id}>${v.value}</${v.id}>`}</pre>
+                            })
+                          }
+                          {`         </CallCriteriaAPI.OtherData>`}<br />
+                          {`    <OtherDataItems>`}
+                        </pre> :
+                        <pre>     {`<${section.id}>${section.value}</${section.id}>`}</pre>
                       }
                     </div>
-                  })
+                  })                     
                 }
-                <div>{`</CallCriteriaAPI.AddRecordData>`}</div>
-              </pre>
+                <pre>{`</CallCriteriaAPI.AddRecordData>`}</pre>
+              </div>
             ) : 
             (
-              <pre>
-                {JSON.stringify(jsonObject)}
-              </pre>
+              <div>
+                <pre>
+                 {`{`}<br/>
+                      {
+                        checkedSections.map(section => {
+                          return <pre key={section.id}>
+                            {
+                              section.id === 'audios' ?
+                              <pre>
+                                {`  "audios" : [{`}<br/>
+                                {
+                                  section.value.map((v, i) => {
+                                    return <pre key={v.id}>         {`"${v.id}": "${v.value}",`}</pre>
+                                  })
+                                }
+                                {`}]`}<br/>
+                              </pre> :
+                              section.id === 'OtherDataItems' ?
+                              <pre>
+                                {`  "OtherDataItems" : [{`}<br/>
+                                {
+                                  section.value.map((v, i) => {
+                                    return <pre key={v.id}>         {`"${v.id}": "${v.value}",`}</pre>
+                                  })
+                                }
+                                {`}]`}<br/>
+                              </pre> :
+                              <pre>    {`"${section.id}": "${section.value}",`}</pre>
+                            }
+                          </pre>
+                        })
+                      }
+                 {`}`}
+                </pre>
+              </div>
             )
           }
         </div>

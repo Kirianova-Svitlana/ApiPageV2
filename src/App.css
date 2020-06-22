@@ -54,9 +54,24 @@ header.masthead.mb-auto.container {
     color: #FFF;
     font-size: 20px;
     font-weight: 500;
+    margin: 0;
 }
 .method-table table.method thead {
     background: #003259;
+}
+.col-md-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.method-table .form-group {
+    background-color: #0c4877;
+    color: #FFFFFF;
+    margin: 0;
+}
+select#metod-type {
+    color: #FFF;
+    background-color: #0c4877;
 }
 .row.method-output {
     border: 1px solid #e0e0e0;
@@ -75,6 +90,7 @@ pre{
     font-size: 15px;
     color: #212529;
     line-height: 1.5;
+    margin: 0;
 }
 
 .form-control {

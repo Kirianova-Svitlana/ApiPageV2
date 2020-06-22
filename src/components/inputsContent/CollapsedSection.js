@@ -2,7 +2,14 @@ import React, {useState} from 'react'
 
 import CollapsedSectionRow from './CollapsedSectionRow'
 
-const CollapsedSection = ({section, sections, setSections}) => {
+const CollapsedSection = ({
+    section,
+    sections,
+    setSections,
+    checkedSections,
+    setCheckedSections,
+    initialCheckedSections,
+  }) => {
   const show = section.sectionFilds.find(row => row.isChecked)
   const [isCollapsed, setCollapsed] = useState(!show)
   
@@ -39,6 +46,8 @@ const CollapsedSection = ({section, sections, setSections}) => {
               section={section}
               sections={sections}
               setSections={setSections}
+              setCheckedSections={setCheckedSections}
+              initialCheckedSections={initialCheckedSections}
             />
           })
         }

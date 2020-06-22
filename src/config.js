@@ -7,17 +7,29 @@ export const sectionsConfig = [
       {
         id: 'AGENT',
         isChecked: false,
-        description: 'Your agents name or ID. Used to sort and filter on the dashboard.'
+        description: 'Your agents name or ID. Used to sort and filter on the dashboard.',
+        objectRequest: {
+          id: 'AGENT',
+          value: 'String content'
+        }
       },
       {
         id: 'AGENT_GROUP',
         isChecked: false,
-        description: 'Group/Supervisor owning the agent. Can be filtered on dashboard.'
+        description: 'Group/Supervisor owning the agent. Can be filtered on dashboard.',
+        objectRequest: {
+          id: 'AGENT_GROUP',
+          value: 'String content'
+        }
       },
       {
         id: 'AGENT_NAME',
         isChecked: false,
-        description: 'Can be the agents full name instead of their ID. Not used to sort or filter.'
+        description: 'Can be the agents full name instead of their ID. Not used to sort or filter.',
+        objectRequest: {
+          id: 'AGENT_NAME',
+          value: 'String content'
+        }
       },
     ]
   },
@@ -29,47 +41,83 @@ export const sectionsConfig = [
       {
         id: 'First_Name',
         isChecked: false,
-        description: `Lead's first name`
+        description: `Lead's first name`,
+        objectRequest: {
+          id: 'First_Name',
+          value: 'String content'
+        }
       },
       {
         id: 'Last_Name',
         isChecked: false,
-        description: `Lead's last name`
+        description: `Lead's last name`,
+        objectRequest: {
+          id: 'Last_Name',
+          value: 'String content'
+        }
       },
       {
         id: 'Email of lead',
         isChecked: false,
-        description: `Lead's first name`
+        description: `Lead's first name`,
+        objectRequest: {
+          id: 'Email',
+          value: 'String content'
+        }
       },
       {
         id: 'phone',
         isChecked: false,
-        description: `Lead's Phone`
+        description: `Lead's Phone`,
+        objectRequest: {
+          id: 'phone',
+          value: 'String content'
+        }
       },
       {
         id: 'address',
         isChecked: false,
-        description: `Lead's street address`
+        description: `Lead's street address`,
+        objectRequest: {
+          id: 'address',
+          value: 'String content'
+        }
       },
       {
         id: 'City',
         isChecked: false,
-        description: `City of Lead`
+        description: `City of Lead`,
+        objectRequest: {
+          id: 'City',
+          value: 'String content'
+        }
       },
       {
         id: 'State',
         isChecked: false,
-        description: `State of Lead`
+        description: `State of Lead`,
+        objectRequest: {
+          id: 'State',
+          value: 'String content'
+        }
       },
       {
         id: 'Zip',
         isChecked: false,
-        description: `Zip/postal code of lead`
+        description: `Zip/postal code of lead`,
+        objectRequest: {
+          id: 'Zip',
+          value: 'String content'
+        }
       },
       {
         id: 'Program',
         isChecked: false,
-        description: `Program lead was interested in`
+        description: `Program lead was interested in`,
+        objectRequest: {
+          id: 'Program',
+          value: 'String content'
+        }
       },
     ]
   },
@@ -81,87 +129,156 @@ export const sectionsConfig = [
       {
         id: 'CALL_TIME',
         isChecked: false,
-        description: 'Time of the call stored as 12/30/1899 + call length - 1899-12-30 00:01:03.000 for example.'
+        description: 'Time of the call stored as 12/30/1899 + call length - 1899-12-30 00:01:03.000 for example.',
+        objectRequest: {
+          id: 'CALL_TIME',
+          value: 'String content'
+        }
       },
       {
         id: 'call_date',
         isChecked: false,
-        description: 'Date the call/record was created'
+        description: 'Date the call/record was created',
+        objectRequest: {
+          id: 'call_date',
+          value: 'String content'
+        }
       },
       {
         id: 'CALL_TYPE',
         isChecked: false,
-        description: 'Type of Call'
+        description: 'Type of Call',
+        objectRequest: {
+          id: 'CALL_TYPE',
+          value: 'String content'
+        }
       },
       {
         id: 'CAMPAIGN',
         isChecked: false,
-        description: 'Is used as a filter on the dashboard.'
+        description: 'Is used as a filter on the dashboard.',
+        objectRequest: {
+          id: 'CAMPAIGN',
+          value: 'String content'
+        }
       },
       {
         id: 'HANDLE_TIME',
         isChecked: false,
-        description: 'Handle time of the call stored as 1/1/1899 + call length -- but is a string, so anything works!'
+        description: 'Handle time of the call stored as 1/1/1899 + call length -- but is a string, so anything works!',
+        objectRequest: {
+          id: 'HANDLE_TIME',
+          value: 'String content'
+        }
       },
       {
         id: 'HOLD_TIME',
         isChecked: false,
-        description: 'Hold time of call'
+        description: 'Hold time of call',
+        objectRequest: {
+          id: 'HOLD_TIME',
+          value: 'String content'
+        }
       },
       {
         id: 'TALK_TIME',
         isChecked: false,
-        description: 'Talk time of the call stored as 1/1/1899 + call length -- but is a string, so anything works!'
+        description: 'Talk time of the call stored as 1/1/1899 + call length -- but is a string, so anything works!',
+        objectRequest: {
+          id: 'TALK_TIME',
+          value: 'String content'
+        }
       },
       {
         id: 'TIMESTAMP',
         isChecked: false,
-        description: 'Full date and time the call was made display only.'
+        description: 'Full date and time the call was made display only.',
+        objectRequest: {
+          id: 'TIMESTAMP',
+          value: 'String content'
+        }
       },
       {
         id: 'LIST_NAME',
         isChecked: false,
-        description: 'List from which the call was originated'
+        description: 'List from which the call was originated',
+        objectRequest: {
+          id: 'LIST_NAME',
+          value: 'String content'
+        }
       },
       {
         id: 'DISPOSITION',
         isChecked: false,
-        description: 'Result of the call.'
+        description: 'Result of the call.',
+        objectRequest: {
+          id: 'DISPOSITION',
+          value: 'String content'
+        }
       },
       {
         id: 'Data capture_status',
         isChecked: false,
-        description: 'Lead ID status'
+        description: 'Lead ID status',
+        objectRequest: {
+          id: 'Datacapture_Status',
+          value: 'String content'
+        }
+
       },
       {
         id: 'profile_id',
         isChecked: false,
-        description: 'Leads internal profile ID'
+        description: 'Leads internal profile ID',
+        objectRequest: {
+          id: 'profile_id',
+          value: 'String content'
+        }
       },
       {
         id: 'leadid',
         isChecked: false,
-        description: 'ID number from source system.'
+        description: 'ID number from source system.',
+        objectRequest: {
+          id: 'leadid',
+          value: 'String content'
+        }
       },
       {
         id: 'Data capture',
         isChecked: false,
-        description: 'Another lead ID'
+        description: 'Another lead ID',
+        objectRequest: {
+          id: 'Datacapture',
+          value: 'String content'
+        }
       },
       {
         id: 'Data capture Key',
         isChecked: false,
-        description: 'Another lead ID'
+        description: 'Another lead ID',
+        objectRequest: {
+          id: 'Datacapturekey',
+          value: 'String content'
+        }
       },
       {
         id: 'Status',
         isChecked: false,
-        description: 'Lead Status'
+        description: 'Lead Status',
+        objectRequest: {
+          id: 'Status',
+          value: 'String content'
+        }
       },
       {
         id: 'sort_order',
         isChecked: false,
-        description: 'Insert lower numbers to have these reviewed earlier'
+        description: 'Insert lower numbers to have these reviewed earlier',
+        objectRequest: {
+          id: 'sort_order',
+          value: 'String content'
+        }
       },
     ]
   },
@@ -173,12 +290,33 @@ export const sectionsConfig = [
       {
         id: 'audio_link',
         isChecked: false,
-        description: 'Reference to the audio file -- ftp/sftp/http/https/etc. are all acceptable'
+        description: 'Reference to the audio file -- ftp/sftp/http/https/etc. are all acceptable',
+        objectRequest: {
+          id: 'audio_link',
+          value: 'String content'
+        }
       },
       {
         id: 'audios',
         isChecked: false,
-        description: 'Add as many audio files as needed one object'
+        description: 'Add as many audio files as needed one object',
+        objectRequest: {
+          id: 'audios',
+          value:  [
+            {
+              id:'audio_file',
+              value: 'String content'
+            },
+            {
+              id:'file_date',
+              value: 'String content'
+            },
+            {
+              id:'order',
+              value: 'String content'
+            }
+          ]
+        }
       },
     ]
   },
@@ -190,7 +328,32 @@ export const sectionsConfig = [
       {
         id: 'Other Data Items',
         isChecked: false,
-        description: 'Add as many other data items one object see below'
+        description: 'Add as many other data items one object see below',
+        objectRequest: {
+          id: 'OtherDataItems',
+          value: [
+            {
+              id:'key',
+              value: 'String content'
+            },
+            {
+              id:'label',
+              value: 'String content'
+            },
+            {
+              id:'school',
+              value: 'String content'
+            },
+            {
+              id:'type',
+              value: 'String content'
+            },
+            {
+              id:'value',
+              value: 'String content'
+            },
+          ]
+        }
       },
     ]
   },

@@ -1,6 +1,13 @@
 import React, {Fragment} from 'react'
 
-const CollapsedSectionRow = ({row, section, sections, setSections}) => {
+const CollapsedSectionRow = ({
+    row,
+    section,
+    sections,
+    setSections,
+    setCheckedSections,
+    initialCheckedSections,
+  }) => {
   const selectUnselectValue = () => {
     const newSections = sections.map((s) => {
       if (s.sectionId === section.sectionId) {
@@ -21,6 +28,20 @@ const CollapsedSectionRow = ({row, section, sections, setSections}) => {
       return s
     })
     setSections(newSections)
+    const sectionsForSave = []
+    newSections.map(section => {
+      const checkedInSection = section.sectionFilds.filter(sectionRow => sectionRow.isChecked)
+      if (checkedInSection.length !== 0) {
+        checkedInSection.map(s => {
+          sectionsForSave.push(s.objectRequest)
+        })
+      }
+      const arr = sectionsForSave.concat(initialCheckedSections)
+      const sorted = arr.sort((a,b) => {
+        return (a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0
+      })
+      setCheckedSections(sorted)  
+    })
   }
 
   return <Fragment>

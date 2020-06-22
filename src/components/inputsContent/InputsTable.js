@@ -8,16 +8,17 @@ const InputsTable = ({inputValues, setInputValues, user}) => {
       [key]: e.target.value,
     })
   }
-  const apiKeys = []
+  const apikeys = []
   let scorecards
   let apps
   if (user) {
     apps = user.session.apps
-    scorecards = user.session.scorecards
+    const selectedApp = user.session.apps.find(a => a.appname === inputValues.appname)
+    if (selectedApp) {
+      scorecards = selectedApp.scorecards
+    }
   }
 
-  console.log("apps------->", apps)
-  console.log("scorecards------->", scorecards)
   return (
     <div className="row blue-back api-box-form py-2" >
       <div className="col-md-3">
@@ -26,37 +27,9 @@ const InputsTable = ({inputValues, setInputValues, user}) => {
           <input
             type="text"
             className="form-control"
-            value={inputValues.apiKey || ''}
-            onChange={(e) => handleChange(e, 'apiKey')}
+            value={inputValues.apikey || ''}
+            onChange={(e) => handleChange(e, 'apikey')}
           />
-        </div>
-      </div>
-      <div className="col-md-3">
-        <div className="form-group">
-          <label>SCORECARD ID</label>
-          {
-            !user || !scorecards || scorecards.length === 0 ?
-            <input
-              type="text"
-              className="form-control"
-              value={inputValues.scorecardId || ''}
-              onChange={(e) => handleChange(e, 'scorecardId')}
-            /> : 
-            <select
-              id="scorecardId"
-              className="form-control"
-              name="scorecardId"
-              value={inputValues.scorecardId}
-              onChange={(e) => handleChange(e, 'scorecardId')}
-            >
-              <option>Select</option>
-              {
-                scorecards.map(s => {
-                  return <option value={s.scorecard}>{s.scorcard_name}</option>
-                })
-              }
-            </select>
-          }
         </div>
       </div>
       <div className="col-md-3">
@@ -67,20 +40,48 @@ const InputsTable = ({inputValues, setInputValues, user}) => {
             <input
               type="text"
               className="form-control"
-              value={inputValues.appName || ''}
-              onChange={(e) => handleChange(e, 'appName')}
+              value={inputValues.appname || ''}
+              onChange={(e) => handleChange(e, 'appname')}
             /> : 
             <select
-              id="appName"
+              id="appname"
               className="form-control"
-              name="appName"
-              value={inputValues.appName}
-              onChange={(e) => handleChange(e, 'appName')}
+              name="appname"
+              value={inputValues.appname}
+              onChange={(e) => handleChange(e, 'appname')}
             >
               <option>Select</option>
               {
                 apps.map(app => {
                   return <option>{app.appname}</option>
+                })
+              }
+            </select>
+          }
+        </div>
+      </div>
+       <div className="col-md-3">
+        <div className="form-group">
+          <label>SCORECARD ID</label>
+          {
+            !user || !scorecards || scorecards.length === 0 ?
+            <input
+              type="text"
+              className="form-control"
+              value={inputValues.scorecard || ''}
+              onChange={(e) => handleChange(e, 'scorecard')}
+            /> : 
+            <select
+              id="scorecard"
+              className="form-control"
+              name="scorecard"
+              value={inputValues.scorecard}
+              onChange={(e) => handleChange(e, 'scorecard')}
+            >
+              <option>Select</option>
+              {
+                scorecards.map(s => {
+                  return <option value={s.scorecard}>{s.scorcard_name}</option>
                 })
               }
             </select>

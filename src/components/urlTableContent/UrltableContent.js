@@ -3,21 +3,13 @@ import React, {Fragment} from 'react'
 import UrlTable from './UrlTable'
 import logoBig from '../../../public/cc-logo1.png'
 
-const UrltableContent = ({inputValues}) => {
+const UrltableContent = ({inputValues, setInputValues, sections, checkedSections}) => {
   return (
     <Fragment>
       <div className="row">
         <div className="col-md-6">
           <img src={logoBig} alt="Call Criteria" />
           <h2><span>Web Service Interface Document</span></h2>  
-        </div>
-        <div className="col-md-6">
-          <p className="ver-release-dates float-right text-right">
-            6/25/2015 <br />
-            rev 2 12/10/2015 <br />
-            rev 3 11/30/2016 <br />
-            rev 4 07/10/2017
-          </p>
         </div>
       </div>
       <div className="row">
@@ -30,7 +22,11 @@ const UrltableContent = ({inputValues}) => {
         <div className="col-md-3"></div>
         <div className="col-md-3"></div>
       </div>
-      <UrlTable inputValues={inputValues}/>
+      <UrlTable
+        sections={sections}
+        inputValues={inputValues}
+        setInputValues={setInputValues}
+        checkedSections={checkedSections}/>
       <div className="row">
         <div className="col-md-12">
           <p>Use the provided, via email, values to populate the data fields , and . The Scorecard Description is there to show which scorecard the ID belongs to.</p>    

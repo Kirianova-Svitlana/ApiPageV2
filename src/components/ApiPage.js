@@ -8,6 +8,15 @@ const userMock = {"session":{"userId":42312,"UserRole":"Admin","minGapLength":0,
 const ApiPage = () => {
   const [user, setUser] = useState(null)
 
+  const getParams = () => {
+  	const searchParams = new URLSearchParams(location.search)
+	const params = {}
+	searchParams.forEach((value, key) => {
+		params[key] = value
+	})
+	return params
+  }
+  
   useEffect(() => {
     const host = location.origin
     const isLocal = host.includes('localhost')
@@ -34,7 +43,7 @@ const ApiPage = () => {
   return (
     <Fragment >
       <Header />
-      <PageContent user={user}/>
+      <PageContent user={user} params={getParams()}/>
     </Fragment >
   )
 } 
