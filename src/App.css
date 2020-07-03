@@ -59,6 +59,11 @@ header.masthead.mb-auto.container {
 .method-table table.method thead {
     background: #003259;
 }
+.col-md-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .col-md-3 {
     display: flex;
     flex-direction: column;

@@ -154,6 +154,15 @@ export const sectionsConfig = [
         }
       },
       {
+        id: 'mustReview',
+        isChecked: false,
+        description: 'This is so a client can send a call over with it tagged as must review, which will circumvent existing business rules',
+        objectRequest: {
+          id: 'mustReview',
+          value: 'Boolean'
+        }
+      },
+      {
         id: 'CAMPAIGN',
         isChecked: false,
         description: 'Is used as a filter on the dashboard.',
