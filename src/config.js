@@ -57,9 +57,9 @@ export const sectionsConfig = [
         }
       },
       {
-        id: 'Email of lead',
+        id: 'Email',
         isChecked: false,
-        description: `Lead's first name`,
+        description: `Email address`,
         objectRequest: {
           id: 'Email',
           value: 'String content'
@@ -110,15 +110,15 @@ export const sectionsConfig = [
           value: 'String content'
         }
       },
-      {
-        id: 'Program',
-        isChecked: false,
-        description: `Program lead was interested in`,
-        objectRequest: {
-          id: 'Program',
-          value: 'String content'
-        }
-      },
+      // {
+      //   id: 'Program',
+      //   isChecked: false,
+      //   description: `Program lead was interested in`,
+      //   objectRequest: {
+      //     id: 'Program',
+      //     value: 'String content'
+      //   }
+      // },
     ]
   },
   {
@@ -226,7 +226,7 @@ export const sectionsConfig = [
         }
       },
       {
-        id: 'Data capture_status',
+        id: 'Datacapture_status',
         isChecked: false,
         description: 'Lead ID status',
         objectRequest: {
@@ -254,7 +254,7 @@ export const sectionsConfig = [
         }
       },
       {
-        id: 'Data capture',
+        id: 'Datacapture',
         isChecked: false,
         description: 'Another lead ID',
         objectRequest: {
@@ -263,7 +263,7 @@ export const sectionsConfig = [
         }
       },
       {
-        id: 'Data capture Key',
+        id: 'DatacaptureKey',
         isChecked: false,
         description: 'Another lead ID',
         objectRequest: {
@@ -302,7 +302,7 @@ export const sectionsConfig = [
         description: 'Reference to the audio file -- ftp/sftp/http/https/etc. are all acceptable',
         objectRequest: {
           id: 'audio_link',
-          value: 'String content'
+          value: 'http://www.google.com/1.wav'
         }
       },
       {
@@ -318,11 +318,11 @@ export const sectionsConfig = [
             },
             {
               id:'file_date',
-              value: 'String content'
+              value: 'MM/DD/YYYY'
             },
             {
               id:'order',
-              value: 'String content'
+              value: '1'
             }
           ]
         }

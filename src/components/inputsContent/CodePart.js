@@ -1,21 +1,15 @@
 import React from 'react'
 
 const CodePart = ({checkedSections, inputValues}) => {
-  const jsonObj = {}
   checkedSections.map(s => {
-    if (s.id === 'audios') {
-      const values = []
-      s.value.map(v => {
-        const val = {}
-        val[v.id] = v.value
-        values.push(val)
-      })
-      jsonObj[s.id] = values
-    } else {
-      jsonObj[s.id] = s.value
+    if (s.id === 'appname') {
+      s.value = inputValues.appname ? inputValues.appname : 'String content'
     }
+    if (s.id === 'scorecard') {
+      s.value = inputValues.scorecard ? inputValues.scorecard : 'String content'
+    }
+    return s
   })
-  const string = JSON.stringify(jsonObj)
   return (
     <div className="row output-area mb-5">
       <div className="col-md-12">

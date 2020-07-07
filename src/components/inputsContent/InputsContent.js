@@ -25,7 +25,7 @@ const InputsContent = ({
 
               Feel free to check the items that you would like to add and then the sample post will populate below.<br />
               
-              If the data you are posting does not have the same fields, but you would like to use an existing field feel free to map to that field using Other Data Items
+              If the data you are posting does not have the same fields, but you would like to use an existing field please map to that field using Other Data Items
           </p>
         </div>
       </div>

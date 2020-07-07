@@ -8,7 +8,6 @@ const UrltableContent = ({inputValues, setInputValues, sections, checkedSections
     <Fragment>
       <div className="row">
         <div className="col-md-6">
-          <img src={logoBig} alt="Call Criteria" />
           <h2><span>Web Service Interface Document</span></h2>  
         </div>
       </div>
@@ -29,7 +28,6 @@ const UrltableContent = ({inputValues, setInputValues, sections, checkedSections
         checkedSections={checkedSections}/>
       <div className="row">
         <div className="col-md-12">
-          <p>Use the provided, via email, values to populate the data fields , and . The Scorecard Description is there to show which scorecard the ID belongs to.</p>    
           <p>The web service for Call Criteria is used to send records individually to our system without the need to upload data and/or audio files or referential data.</p>
         </div>
       </div>

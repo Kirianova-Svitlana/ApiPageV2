@@ -1,11 +1,12 @@
 import React from 'react'
 
 import logo from '../../public/cc-logo.png'
+import logoBig from '../../public/cc-logo1.png'
 
 const Header = () => {
   return <header className="masthead mb-auto container py-5 px-5">
-    <div className="row">
-      <div className="col-md-5">
+    <div className="row header-row">
+      <div className="col-md-5 small-logo-row">
         <div className="masthead-brand">
           <div className="nav-brand">
             <a href="#">
@@ -14,7 +15,8 @@ const Header = () => {
             </a>    
           </div>
         </div>
-      </div>    
+      </div>
+      <img src={logoBig} alt="Call Criteria" />    
     </div>
   </header>
 } 

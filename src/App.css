@@ -16,12 +16,14 @@ a.nav-link {
 }
 a.nav-link:hover {
     color: #05b6eb !important;
+    margin: auto;
+    height: 100%;
 }
 .nav-brand h1 {
     font-size: 1rem;
     display: inline-block;
-    padding-left: 15px;
     font-family: poppins,sans-serif;
+    line-height: unset;
 }
 h2 {
     font-family: "Lato",sans-serif;
@@ -220,4 +222,31 @@ div#accordionParams {
 }
 .comments {
     width: 51%;
+}
+
+.header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.small-logo-row {
+    height: 100%;
+    margin: auto 0; 
+}
+
+.masthead-brand {
+    height: 100%;
+}
+
+.nav-brand {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.py-5 {
+    padding-bottom: 2rem!important;
 }
