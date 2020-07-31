@@ -9,12 +9,12 @@ const ApiPage = () => {
   const [user, setUser] = useState(null)
 
   const getParams = () => {
-  	const searchParams = new URLSearchParams(location.search)
-	const params = {}
-	searchParams.forEach((value, key) => {
-		params[key] = value
-	})
-	return params
+    const searchParams = new URLSearchParams(location.search)
+    const params = {}
+    searchParams.forEach((value, key) => {
+        params[key] = value
+    })
+    return params
   }
   
   useEffect(() => {

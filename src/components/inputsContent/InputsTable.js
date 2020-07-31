@@ -13,7 +13,7 @@ const InputsTable = ({inputValues, setInputValues, user}) => {
   let apps
   if (user) {
     apps = user.session.apps
-    const selectedApp = user.session.apps.find(a => a.appname === inputValues.appname)
+    const selectedApp = user && user.session.UserName && user.session.apps.find(a => a.appname === inputValues.appname)
     if (selectedApp) {
       scorecards = selectedApp.scorecards
     }
