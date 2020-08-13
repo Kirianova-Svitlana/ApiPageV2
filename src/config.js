@@ -11,7 +11,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'AGENT',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'AGENT_GROUP',
@@ -20,7 +22,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'AGENT_GROUP',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'AGENT_NAME',
@@ -29,7 +33,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'AGENT_NAME',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
     ]
   },
@@ -45,7 +51,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'First_Name',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '150',
       },
       {
         id: 'Last_Name',
@@ -54,7 +62,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'Last_Name',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '150',
       },
       {
         id: 'Email',
@@ -63,7 +73,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'Email',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'phone',
@@ -72,7 +84,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'phone',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '50',
       },
       {
         id: 'address',
@@ -81,7 +95,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'address',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '200',
       },
       {
         id: 'City',
@@ -90,7 +106,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'City',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'State',
@@ -99,7 +117,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'State',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'Zip',
@@ -108,7 +128,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'Zip',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '20',
       },
       // {
       //   id: 'Program',
@@ -133,7 +155,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'CALL_TIME',
           value: 'String content'
-        }
+        },
+        type: 'datetime',
+        size: '8',
       },
       {
         id: 'call_date',
@@ -142,7 +166,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'call_date',
           value: 'String content'
-        }
+        },
+        type: 'datetime',
+        size: '8',
       },
       {
         id: 'CALL_TYPE',
@@ -151,7 +177,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'CALL_TYPE',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'mustReview',
@@ -160,7 +188,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'mustReview',
           value: 'Boolean'
-        }
+        },
+        type: 'boolean',
+        size: '1',
       },
       {
         id: 'CAMPAIGN',
@@ -169,7 +199,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'CAMPAIGN',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'HANDLE_TIME',
@@ -178,7 +210,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'HANDLE_TIME',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '100',
       },
       {
         id: 'HOLD_TIME',
@@ -187,7 +221,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'HOLD_TIME',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '100',
       },
       {
         id: 'TALK_TIME',
@@ -196,7 +232,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'TALK_TIME',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '100',
       },
       {
         id: 'TIMESTAMP',
@@ -205,7 +243,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'TIMESTAMP',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'LIST_NAME',
@@ -214,7 +254,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'LIST_NAME',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'DISPOSITION',
@@ -223,7 +265,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'DISPOSITION',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '8000',
       },
       {
         id: 'Datacapture_status',
@@ -232,8 +276,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'Datacapture_Status',
           value: 'String content'
-        }
-
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'profile_id',
@@ -242,7 +287,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'profile_id',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '100',
       },
       {
         id: 'leadid',
@@ -251,7 +298,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'leadid',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '100',
       },
       {
         id: 'Datacapture',
@@ -260,7 +309,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'Datacapture',
           value: 'String content'
-        }
+        },
+        type: 'float',
+        size: '8',
       },
       {
         id: 'DatacaptureKey',
@@ -269,7 +320,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'Datacapturekey',
           value: 'String content'
-        }
+        },
+        type: 'float',
+        size: '8',
       },
       {
         id: 'Status',
@@ -278,7 +331,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'Status',
           value: 'String content'
-        }
+        },
+        type: 'string',
+        size: '255',
       },
       {
         id: 'sort_order',
@@ -287,7 +342,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'sort_order',
           value: 'String content'
-        }
+        },
+        type: 'int',
+        size: '4',
       },
     ]
   },
@@ -303,7 +360,9 @@ export const sectionsConfig = [
         objectRequest: {
           id: 'audio_link',
           value: 'http://www.google.com/1.wav'
-        }
+        },
+        type: 'string',
+        size: '8000',
       },
       {
         id: 'audios',
@@ -325,7 +384,9 @@ export const sectionsConfig = [
               value: '1'
             }
           ]
-        }
+        },
+        type: '',
+        size: null,
       },
     ]
   },
@@ -338,6 +399,8 @@ export const sectionsConfig = [
         id: 'Other Data Items',
         isChecked: false,
         description: 'Add as many other data items one object see below',
+        type: '',
+        size: null,
         objectRequest: {
           id: 'OtherDataItems',
           value: [

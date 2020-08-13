@@ -56,12 +56,17 @@ const CollapsedSectionRow = ({
           onChange={() => {}} />
       </div>
     </div>
-    <div className="col-md-3">
+    <div className="col-md-2">
       <div className="form-control">
         <label>{row.id}</label>
       </div>
     </div>
-    <div className="col-md-8">
+    <div className="col-md-2">
+          <div className="form-control">
+            <p htmlFor="checkbox-4">{row.size ?  row.type +  '(' + row.size + ')' : null}</p>
+          </div>
+        </div>
+    <div className="col-md-7">
       <p>{row.description}</p>
     </div>
   </div>
