@@ -94,13 +94,13 @@ const CollapsedSectionRow = ({
         <div className='table-row'>
           <div className='table-cell name'>order</div>
           <div className='table-cell type'>Int</div>
-          <div className='table-cell size'></div>
+          <div className='table-cell size'>4</div>
           <div className='table-cell required'>No</div>
           <div className='table-cell comments'>If you have the files in order, populate this</div>
         </div>
         <div className='table-row'>
           <div className='table-cell name'>file_date</div>
-          <div className='table-cell type'>String</div>
+          <div className='table-cell type'>Varchar</div>
           <div className='table-cell size'>100</div>
           <div className='table-cell required'>No</div>
           <div className='table-cell comments'>If you have the files in chronological order, populate this</div>
@@ -123,36 +123,36 @@ const CollapsedSectionRow = ({
           </div>
           <div className='table-row'>
             <div className='table-cell name'>key</div>
-            <div className='table-cell type'>String</div>
-            <div className='table-cell size'>100</div>
+            <div className='table-cell type'>Varchar</div>
+            <div className='table-cell size'>2000</div>
             <div className='table-cell required'>No</div>
             <div className='table-cell comments'>Bolded value presented to our QA for data key name “Mortgage” for instance</div>
           </div>
           <div className='table-row'>
             <div className='table-cell name'>value</div>
-            <div className='table-cell type'>String</div>
-            <div className='table-cell size'>100</div>
+            <div className='table-cell type'>Varchar</div>
+            <div className='table-cell size'>Max.</div>
             <div className='table-cell required'>No</div>
             <div className='table-cell comments'>Data value itself “$350k” for instance</div>
           </div>
           <div className='table-row'>
             <div className='table-cell name'>type</div>
-            <div className='table-cell type'>String</div>
+            <div className='table-cell type'>Varchar</div>
             <div className='table-cell size'>100</div>
             <div className='table-cell required'>No</div>
             <div className='table-cell comments'>Default to “string”  -- more values in the future.</div>
           </div>
           <div className='table-row'>
             <div className='table-cell name'>school</div>
-            <div className='table-cell type'>String</div>
+            <div className='table-cell type'>Varchar</div>
             <div className='table-cell size'>100</div>
             <div className='table-cell required'>No</div>
             <div className='table-cell comments'>Post if this data element is directly related to a specific school.</div>
           </div>
           <div className='table-row'>
             <div className='table-cell name'>label</div>
-            <div className='table-cell type'>String</div>
-            <div className='table-cell size'>2000</div>
+            <div className='table-cell type'>Varchar</div>
+            <div className='table-cell size'>8000</div>
             <div className='table-cell required'>No</div>
             <div className='table-cell comments'>Description if needed for the key</div>
           </div>
