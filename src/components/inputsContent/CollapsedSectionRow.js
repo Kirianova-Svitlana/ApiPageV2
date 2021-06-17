@@ -7,6 +7,8 @@ const CollapsedSectionRow = ({
     setSections,
     setCheckedSections,
     initialCheckedSections,
+    setCheckedColumnsToShow,
+    checkedColumnsToShow,
   }) => {
   const selectUnselectValue = () => {
     const newSections = sections.map((s) => {
@@ -40,7 +42,8 @@ const CollapsedSectionRow = ({
       const sorted = arr.sort((a,b) => {
         return (a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0
       })
-      setCheckedSections(sorted)  
+      setCheckedSections(sorted)
+      setCheckedColumnsToShow(sorted)
     })
   }
 

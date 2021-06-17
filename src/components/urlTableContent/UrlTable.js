@@ -21,7 +21,13 @@ const UrlTable = ({inputValues, setInputValues, sections, checkedSections}) => {
           <h4>URL</h4>
         </div>
         <div className="col-md-3">
-          <h4>METHOD</h4>
+          <h4>
+            METHOD
+            {
+              inputValues.metodType === 'Add Record' ?
+              ' (POST)' : ' (GET)'
+            }
+          </h4>
         </div>
         <div className="col-md-3">
           <h4>DESCRIPTION</h4>
@@ -46,7 +52,7 @@ const UrlTable = ({inputValues, setInputValues, sections, checkedSections}) => {
         <p>
           {
             inputValues.metodType === 'Add Record' ?
-            `http://app.callcriteria.com/callcriteriaAPI.svc/${inputValues.format}/AddRecord?apikey=${inputValues.apikey}&appname=${inputValues.appname}` :
+            `https://app.callcriteria.com/callcriteriaAPI.svc/${inputValues.format}/AddRecord?apikey=${inputValues.apikey}&appname=${inputValues.appname}` :
             `https://app.callcriteria.com/CallCriteriaAPI.svc/${inputValues.format}/PostRecord?apikey=${inputValues.apikey}&scorecard=${inputValues.scorecard}&appname=${inputValues.appname}${urlPost}`
           }
         </p>

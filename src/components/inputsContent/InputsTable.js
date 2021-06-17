@@ -1,12 +1,13 @@
 import React from 'react'
 
-const InputsTable = ({inputValues, setInputValues, user}) => {
+const InputsTable = ({inputValues, setInputValues, user, setSelectedFormat}) => {
   
   const handleChange = (e, key) => {
     setInputValues({
       ...inputValues, 
       [key]: e.target.value,
     })
+    setSelectedFormat( e.target.value)
   }
   const apikeys = []
   let scorecards

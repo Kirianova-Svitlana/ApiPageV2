@@ -14,6 +14,9 @@ const InputsContent = ({
   checkedSections,
   setCheckedSections,
   initialCheckedSections,
+  setCheckedColumnsToShow,
+  checkedColumnsToShow,
+  setSelectedFormat
 }) => {
   return (
     <Fragment>
@@ -32,7 +35,8 @@ const InputsContent = ({
       <InputsTable
         user={user}
         inputValues={inputValues}
-        setInputValues={setInputValues}/>
+        setInputValues={setInputValues}
+        setSelectedFormat={setSelectedFormat}/>
       <StaticSection />
       <div className="row">
         <div className="accordion" id="accordionParams">
@@ -45,12 +49,17 @@ const InputsContent = ({
                 setSections={setSections}
                 setCheckedSections={setCheckedSections}
                 initialCheckedSections={initialCheckedSections}
+                setCheckedColumnsToShow={setCheckedColumnsToShow}
+                checkedColumnsToShow={checkedColumnsToShow}
               />
             })
           }
         </div>
       </div>
-      <CodePart inputValues={inputValues} checkedSections={checkedSections}/>
+      {
+        <CodePart inputValues={inputValues} checkedSections={checkedSections}/>
+      }
+      
     </Fragment>
   )
 } 

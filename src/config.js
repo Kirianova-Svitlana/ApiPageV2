@@ -271,6 +271,15 @@ export const sectionsConfig = [
           value: 'String content'
         }
       },
+      // {
+      //   id: 'data_key',
+      //   isChecked: false,
+      //   description: 'Another lead ID',
+      //   objectRequest: {
+      //     id: 'data_key',
+      //     value: 'String content'
+      //   }
+      // },
       {
         id: 'Status',
         isChecked: false,

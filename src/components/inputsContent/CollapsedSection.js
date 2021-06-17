@@ -9,6 +9,8 @@ const CollapsedSection = ({
     checkedSections,
     setCheckedSections,
     initialCheckedSections,
+    setCheckedColumnsToShow,
+    checkedColumnsToShow,
   }) => {
   const show = section.sectionFilds.find(row => row.isChecked)
   const [isCollapsed, setCollapsed] = useState(!show)
@@ -48,6 +50,8 @@ const CollapsedSection = ({
               setSections={setSections}
               setCheckedSections={setCheckedSections}
               initialCheckedSections={initialCheckedSections}
+              setCheckedColumnsToShow={setCheckedColumnsToShow}
+              checkedColumnsToShow={checkedColumnsToShow}
             />
           })
         }
