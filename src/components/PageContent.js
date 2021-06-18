@@ -6,11 +6,11 @@ import InputsContent from './inputsContent/InputsContent'
 import {sectionsConfig} from '../config'
 
 const initialInputValues = {
-  apikey: '', 
-  scorecard: '', 
-  appname: '', 
+  apikey: '',
+  scorecard: '',
+  appname: '',
   format: 'XML',
-  metodType: 'Add Record', 
+  metodType: 'Add Record',
 }
 
 const initialCheckedSections = [
@@ -61,6 +61,9 @@ const PageContent = ({user, params}) => {
      })
   })
 
+  var checkedKeys = params && params.data_key && params.data_key.split(",")
+  const [dataKeyItems, setDataKeyItems] = useState(checkedKeys || [])
+
   const [checkedColumnsToShow, setCheckedColumnsToShow] = useState(checkedClumns)
   const [checkedSections, setCheckedSections] = useState(initialCheckedSections)
 
@@ -72,8 +75,9 @@ const PageContent = ({user, params}) => {
   var format = selectedFormat ? `&format=${selectedFormat}` : ''
   const checkedIDs = filteredColumns.map(s => s.id)
   var checked = filteredColumns.length > 0 ? `&checked=${checkedIDs}` : ''
+  var dataKey = dataKeyItems.length > 0 ? `&data_key=${dataKeyItems}` : ''
 
-  history.replaceState({}, 'apiv2/', `?${key}${app}${scorecard}${checked}${format}`)
+  history.replaceState({}, 'apiv2/', `?${key}${app}${scorecard}${checked}${dataKey}${format}`)
   return <section id="main" className="entry-content">
     <div className="container px-5">
       <UrltableContent
@@ -93,9 +97,11 @@ const PageContent = ({user, params}) => {
         setCheckedColumnsToShow={setCheckedColumnsToShow}
         checkedColumnsToShow={checkedColumnsToShow}
         setSelectedFormat={setSelectedFormat}
+        setDataKeyItems={setDataKeyItems}
+        dataKeyItems={dataKeyItems}
       />
     </div>
   </section>
-} 
+}
 
 export default PageContent

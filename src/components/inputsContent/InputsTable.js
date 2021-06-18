@@ -1,15 +1,15 @@
 import React from 'react'
 
 const InputsTable = ({inputValues, setInputValues, user, setSelectedFormat}) => {
-  
+
   const handleChange = (e, key) => {
     setInputValues({
-      ...inputValues, 
+      ...inputValues,
       [key]: e.target.value,
     })
     setSelectedFormat( e.target.value)
   }
-  const apikeys = []
+  // const apikeys = []
   let scorecards
   let apps
   if (user) {
@@ -43,7 +43,7 @@ const InputsTable = ({inputValues, setInputValues, user, setSelectedFormat}) => 
               className="form-control"
               value={inputValues.appname || ''}
               onChange={(e) => handleChange(e, 'appname')}
-            /> : 
+            /> :
             <select
               id="appname"
               className="form-control"
@@ -71,7 +71,7 @@ const InputsTable = ({inputValues, setInputValues, user, setSelectedFormat}) => 
               className="form-control"
               value={inputValues.scorecard || ''}
               onChange={(e) => handleChange(e, 'scorecard')}
-            /> : 
+            /> :
             <select
               id="scorecard"
               className="form-control"
@@ -105,6 +105,6 @@ const InputsTable = ({inputValues, setInputValues, user, setSelectedFormat}) => 
         </div>
     </div>
   )
-} 
+}
 
 export default InputsTable

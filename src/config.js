@@ -405,7 +405,7 @@ export const sectionsConfig = [
     dataTarget:'collapseFive',
     sectionFilds: [
       {
-        id: 'Other Data Items',
+        id: 'OtherDataItems',
         isChecked: false,
         description: 'Add as many other data items one object see below',
         type: '',

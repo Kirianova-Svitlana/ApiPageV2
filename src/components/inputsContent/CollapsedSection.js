@@ -11,10 +11,12 @@ const CollapsedSection = ({
     initialCheckedSections,
     setCheckedColumnsToShow,
     checkedColumnsToShow,
+    setDataKeyItems,
+    dataKeyItems,
   }) => {
   const show = section.sectionFilds.find(row => row.isChecked)
   const [isCollapsed, setCollapsed] = useState(!show)
-  
+
   const handleClick = () => {
     setCollapsed(!isCollapsed)
   }
@@ -52,12 +54,14 @@ const CollapsedSection = ({
               initialCheckedSections={initialCheckedSections}
               setCheckedColumnsToShow={setCheckedColumnsToShow}
               checkedColumnsToShow={checkedColumnsToShow}
+              setDataKeyItems={setDataKeyItems}
+              dataKeyItems={dataKeyItems}
             />
           })
         }
       </div>
     </div>
   </div>
-} 
+}
 
 export default CollapsedSection

@@ -28,7 +28,7 @@ a.nav-link:hover {
 h2 {
     font-family: "Lato",sans-serif;
     color: #000000 !important;
-    
+
 }
 p {
     font-size: 17px;
@@ -169,6 +169,31 @@ div#accordionParams {
     letter-spacing: normal;
     text-align: left;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.add-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color:#ddf0fa;
+    color: #149BDF;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 160px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-button:hover {
+    background-color: #b0ddf4;
+}
+
+.plus-icon {
+    margin-right: 4px;
 }
 
 .section-name-sm {
@@ -217,6 +242,9 @@ div#accordionParams {
     letter-spacing: normal;
     text-align: left;
 }
+.data-name {
+    width: 79%;
+}
 .name {
     width: 21%;
     border-right: 1px solid #f2f2f2;
@@ -246,7 +274,7 @@ div#accordionParams {
 
 .small-logo-row {
     height: 100%;
-    margin: auto 0; 
+    margin: auto 0;
 }
 
 .masthead-brand {

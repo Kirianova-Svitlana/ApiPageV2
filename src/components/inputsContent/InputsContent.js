@@ -16,7 +16,9 @@ const InputsContent = ({
   initialCheckedSections,
   setCheckedColumnsToShow,
   checkedColumnsToShow,
-  setSelectedFormat
+  setSelectedFormat,
+  setDataKeyItems,
+  dataKeyItems
 }) => {
   return (
     <Fragment>
@@ -27,7 +29,7 @@ const InputsContent = ({
           <p>The following fields are available, but not required, to post data to. <br />
 
               Feel free to check the items that you would like to add and then the sample post will populate below.<br />
-              
+
               If the data you are posting does not have the same fields, but you would like to use an existing field please map to that field using Other Data Items
           </p>
         </div>
@@ -51,6 +53,8 @@ const InputsContent = ({
                 initialCheckedSections={initialCheckedSections}
                 setCheckedColumnsToShow={setCheckedColumnsToShow}
                 checkedColumnsToShow={checkedColumnsToShow}
+                setDataKeyItems={setDataKeyItems}
+                dataKeyItems={dataKeyItems}
               />
             })
           }
@@ -59,9 +63,9 @@ const InputsContent = ({
       {
         <CodePart inputValues={inputValues} checkedSections={checkedSections}/>
       }
-      
+
     </Fragment>
   )
-} 
+}
 
 export default InputsContent

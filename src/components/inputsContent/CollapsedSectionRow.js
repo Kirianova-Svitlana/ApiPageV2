@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react'
+import OterDataPart from './OterDataPart'
 
 const CollapsedSectionRow = ({
     row,
@@ -9,6 +10,8 @@ const CollapsedSectionRow = ({
     initialCheckedSections,
     setCheckedColumnsToShow,
     checkedColumnsToShow,
+    setDataKeyItems,
+    dataKeyItems
   }) => {
   const selectUnselectValue = () => {
     const newSections = sections.map((s) => {
@@ -49,7 +52,7 @@ const CollapsedSectionRow = ({
 
   return <Fragment>
   <div className="row params" onClick={selectUnselectValue}>
-    <div className="col-md-1"> 
+    <div className="col-md-1">
       <div className="form-control">
         <input
           type="checkbox"
@@ -78,7 +81,7 @@ const CollapsedSectionRow = ({
     <div className='section'>
       <div className='section-name' id='audios'>Audios (0 to n AudioFile objects)</div>
       <div className='section-name-sm'>AudioFile Object</div>
-      
+
       <div className='table'>
         <div className='table-header'>
           <div className='table-cell name'>Field Name</div>
@@ -112,57 +115,10 @@ const CollapsedSectionRow = ({
     </div> : null
   }
   {
-    row.id === 'Other Data Items' && row.isChecked ?
-    <div className='section'>
-      <div className='section-name'>OtherDataItems (0 to n OtherData objects)</div>
-      <div className='section-name-sm'>OtherData Object</div>    
-        <div className='table'>
-          <div className='table-header'>
-            <div className='table-cell name'>Field Name</div>
-            <div className='table-cell type'>Type</div>
-            <div className='table-cell size'>Size</div>
-            <div className='table-cell required'>Required</div>
-            <div className='table-cell comments'>Comments/Notes</div>
-          </div>
-          <div className='table-row'>
-            <div className='table-cell name'>key</div>
-            <div className='table-cell type'>Varchar</div>
-            <div className='table-cell size'>2000</div>
-            <div className='table-cell required'>No</div>
-            <div className='table-cell comments'>Bolded value presented to our QA for data key name “Mortgage” for instance</div>
-          </div>
-          <div className='table-row'>
-            <div className='table-cell name'>value</div>
-            <div className='table-cell type'>Varchar</div>
-            <div className='table-cell size'>Max.</div>
-            <div className='table-cell required'>No</div>
-            <div className='table-cell comments'>Data value itself “$350k” for instance</div>
-          </div>
-          <div className='table-row'>
-            <div className='table-cell name'>type</div>
-            <div className='table-cell type'>Varchar</div>
-            <div className='table-cell size'>100</div>
-            <div className='table-cell required'>No</div>
-            <div className='table-cell comments'>Default to “string”  -- more values in the future.</div>
-          </div>
-          <div className='table-row'>
-            <div className='table-cell name'>school</div>
-            <div className='table-cell type'>Varchar</div>
-            <div className='table-cell size'>100</div>
-            <div className='table-cell required'>No</div>
-            <div className='table-cell comments'>Post if this data element is directly related to a specific school.</div>
-          </div>
-          <div className='table-row'>
-            <div className='table-cell name'>label</div>
-            <div className='table-cell type'>Varchar</div>
-            <div className='table-cell size'>8000</div>
-            <div className='table-cell required'>No</div>
-            <div className='table-cell comments'>Description if needed for the key</div>
-          </div>
-      </div>
-    </div> : null
+    row.id === 'OtherDataItems' && row.isChecked ?
+    <OterDataPart setDataKeyItems={setDataKeyItems} dataKeyItems={dataKeyItems}/> : null
   }
   </Fragment>
-} 
+}
 
 export default CollapsedSectionRow
