@@ -61,7 +61,11 @@ const InputsContent = ({
         </div>
       </div>
       {
-        <CodePart inputValues={inputValues} checkedSections={checkedSections}/>
+        <CodePart
+          inputValues={inputValues}
+          dataKeyItems={dataKeyItems}
+          checkedSections={checkedSections}
+          checkedColumnsToShow={checkedColumnsToShow}/>
       }
 
     </Fragment>

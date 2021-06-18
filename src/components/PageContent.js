@@ -61,6 +61,8 @@ const PageContent = ({user, params}) => {
      })
   })
 
+  console.log("params------->", params)
+
   var checkedKeys = params && params.data_key && params.data_key.split(",")
   const [dataKeyItems, setDataKeyItems] = useState(checkedKeys || [])
 

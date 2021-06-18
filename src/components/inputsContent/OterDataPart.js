@@ -24,7 +24,7 @@ const OterDataPart = ({dataKeyItems, setDataKeyItems}) => {
       <div>OtherDataItems (0 to n OtherData objects)</div>
       <div className='add-button' onClick={addNewFild}>
         <div className='plus-icon'>+</div>
-        <div>Add data_key</div>
+        <div>Add key</div>
       </div>
     </div>
     {
@@ -37,7 +37,7 @@ const OterDataPart = ({dataKeyItems, setDataKeyItems}) => {
         {
           dataKeyItems.map((f, index) => {
             return <div className='table-row' key={'key-data-' + index}>
-              <div className='table-cell name'>data_key</div>
+              <div className='table-cell name'>key</div>
               <div className='table-cell data-name'>
                 <input
                   type="text"
